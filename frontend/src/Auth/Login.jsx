@@ -18,7 +18,7 @@ function Login() {
     try {
       const result = await dispatch(login({ email, password })).unwrap();
       setBackendError('');
-
+      console.log("RESULT: ",result);
       if (result.redirectTo) {
         const url = new URL(result.redirectTo);
         const pathOnly = url.pathname + url.search;

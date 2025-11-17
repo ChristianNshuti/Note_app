@@ -110,8 +110,9 @@ const login = async(req,res) => {
         const refreshToken = generateRefreshToken(refreshTokenPayload);
 
         res.cookie("refreshToken",refreshToken, {
-            httpOnly:true,
+            httpOnly:false,
             secure:false,
+            sameSite:'Strict',
             expires:new Date(Date.now() + 7 * 24 * 60 * 60 * 100)
         });
 

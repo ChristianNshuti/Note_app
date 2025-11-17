@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL = 'http://localhost:666/noteSaved';
+const API_URL = 'https://note-app-backend-rh2b.onrender.com/noteSaved';
 
 export const save = createAsyncThunk('saves/save',async({ document_id,type },thunkAPI) => {
     try{
