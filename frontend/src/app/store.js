@@ -6,7 +6,6 @@ import assessmentsReducer from '../features/notes/getAssessmentsSlice';
 import savesReducer from '../features/save/saveNotesAssessmentsSlice';
 import setCourseReducer from '../features/notes/courseSetSlice';
 import filterReducer from '../features/filter/filterSlice';
-import contactsReducer from '../features/contacts/getContacts';
 import deleteReducer from '../features/delete/deleteSlice';
 import updateReducer from '../features/update/updateSlice';
 import profileReducer from '../features/profile/getProfileImageSlice';
@@ -23,7 +22,6 @@ export const store = configureStore({
     saves:savesReducer,
     setCourse:setCourseReducer,
     filter:filterReducer,
-    contacts:contactsReducer,
     delete:deleteReducer,
     update:updateReducer,
     profile:profileReducer

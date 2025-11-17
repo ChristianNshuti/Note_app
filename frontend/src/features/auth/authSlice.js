@@ -3,7 +3,7 @@ import api from '../../API/tokenAPI';
 import axios from 'axios';
 
 
-const API_URL = 'http://localhost:666/auth';
+const API_URL = 'https://note-app-backend-rh2b.onrender.com/auth';
 
 
 

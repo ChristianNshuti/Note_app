@@ -14,7 +14,7 @@ import Home from './Home/home';
 import Notes from './Notes/Notes';
 import Pastpapers from './Pastpapers/Pastpapers';
 import Saved from './Saved/Saved';
-import Contacts from './Contacts/contacts';
+
 import Courses from './Notes/Courses';
 import SavedNotes from './Saved/NotesOnly';
 import SavedPastpapers from './Saved/ExamsOnly';

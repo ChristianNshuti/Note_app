@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL = "http://localhost:666/filtered-assessments";
+const API_URL = "https://note-app-backend-rh2b.onrender.com/filtered-assessments";
 
 export const filterNP = createAsyncThunk('filter/filterNP',async(filters,thunkAPI)=> {
     try{

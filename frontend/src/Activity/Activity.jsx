@@ -352,7 +352,7 @@ const totalPagesOlder = Math.ceil(olderUploads.length / uploadsPerPage);
                                 {course}
                             </div>
                         ))) : (
-                            <p>Teacher has no courses</p>
+                            "" //Teacher has no courses
                         )}
                     </div> 
                     ) : (
@@ -415,7 +415,6 @@ const totalPagesOlder = Math.ceil(olderUploads.length / uploadsPerPage);
                                 </div>
                             </div>
                             <div className={Styles.activityDiv}>
-                                <button data-tooltip="Save"><img src={Save} alt="Save" /></button>
                                 <button data-tooltip="Update" onClick={() => {handleUpdateClick(),setId(thisWeekUpload._id),setType(thisWeekUpload.type)}}><img src={Update} alt="Update" /></button>
                                 <button data-tooltip="Delete" onClick={() => {handleDeleteConfirm(),setId(thisWeekUpload._id),setType(thisWeekUpload.type),setFileName(thisWeekUpload.publicId)}}><img src={Delete} alt="Delete" /></button>
                             </div>
