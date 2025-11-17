@@ -8,7 +8,6 @@ import {
 
 import Notely from './MainApp/Notely';
 import AuthLayout from './MainAuth/Auth';
-import AdminApp from './AdminApp/Dashboard';
 import ActivityLayout from './MainActivity/MainActivity';
 import Home from './Home/home';
 import Notes from './Notes/Notes';
@@ -79,9 +78,7 @@ function AppRoutes() {
     
         {user?.role === 'admin' ? (
           <>
-            <Route path="/" element={<AdminApp />} />
-
-            <Route path="*" element={<NoPage />} />
+              <p>To be implemented later...</p>
           </>
         ) : (
           <>
