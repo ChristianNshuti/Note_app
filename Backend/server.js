@@ -9,7 +9,7 @@ const filteredTestRoute = require('./routes/filteredTestRoutes')
 const saveAndUpload = require('./routes/saveAndUploadRoutes')
 const cookieParser = require('cookie-parser')
 const authRoutes = require('./routes/authRoutes')
-const noteSavedRoutes = require('./routes/noteSaveRoutes')
+const noteSaveRoutes = require('./routes/noteSaveRoutes')
 const contactRoutes = require('./routes/contactRoutes')
 const deleteRoutes = require('./routes/deleteRoutes');
 const updateNARoutes = require('./routes/updateNARoutes')
@@ -37,7 +37,7 @@ app.get('/',(req,res) => {
 })
 
 app.use('/auth',authRoutes);
-app.use('noteSaved',noteSavedRoutes);
+app.use('/noteSaved',noteSaveRoutes);
 app.use('/get-notes',noteRoute);
 app.use('/get-assessments',testsRoute);
 app.use('/filtered-assessments',filteredTestRoute);

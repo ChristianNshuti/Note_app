@@ -17,7 +17,7 @@ import { removeSavedNA } from '../features/save/saveNotesAssessmentsSlice'
 
 export default function Saved(){
 
-    const {removeSavedNAStatus} = useSelector((state)=> state.saves);
+    const {removeSavedNAStatus,savedAssessmentsError} = useSelector((state)=> state.saves);
     const navigate = useNavigate();
     const { recentlySavedNotes , savedNotesStatus , savedNotesError ,
       savedAssessmentsStatus , recentlySavedAssessments,savedY1Assessments,

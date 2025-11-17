@@ -28,7 +28,6 @@ export default function Home(){
     const [activeTime, setActiveTime] = useState("");
     const [activePastTime, setActivePastTime] = useState("");
 
-
     useEffect(() => {
 
     if (location.pathname === '/') {
@@ -190,7 +189,7 @@ export default function Home(){
         <div className={Styles.homeMain}>
             <div className={Styles.scrollArea}>
             <h2 className={Styles.hiThere}> 
-                 👋 &nbsp;Hi there, {user?.username|| 'Guest'} !
+                 👋 &nbsp;Hi there, {user?.username || 'Guest'} !
             </h2>
 
 

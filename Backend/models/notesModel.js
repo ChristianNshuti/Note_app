@@ -7,7 +7,7 @@ const noteSchema = new mongoose.Schema({
     lesson:{type:String,required:true},
     noteName: {type:String,required:true},
     type:{type:String,default:"Notes",enum:["Notes"]},
-    descritpion:{type:String,required:true},
+    description:{type:String,required:true},
     fileUrl:{type:String,required:true},
     publicId:{type:String},
     fileSize:{type:Number},

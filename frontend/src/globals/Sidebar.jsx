@@ -4,7 +4,6 @@ import Home from '../assets/home.webp';
 import Notes from '../assets/notes.webp';
 import Pastpapers from '../assets/pastpapers.webp';
 import Saved from '../assets/saved.webp';
-import Contacts from '../assets/contacts.webp';
 import SideAvatar from '../assets/sideAvatar.webp';
 import Rotater from '../assets/rotater.webp';
 import { Link, useNavigate } from 'react-router-dom';
@@ -109,10 +108,7 @@ export default function Sidebar({ visible }) {
         <span>Saved</span>
       </button>
 
-      <button onClick={() => handleNavigation('/contacts')} className={`${Styles.navigationBtn} ${location.pathname === '/contacts' ? Styles.activeNav : ''}`}>
-        <img src={Contacts} className={Styles.navigationIcon} alt="Contacts" loading="lazy"/>
-        <span>Contacts</span>
-      </button>
+
 
         <div className={Styles.avatarDiv}>
         <p>Share smartly,<br /> learn better with Notely</p>

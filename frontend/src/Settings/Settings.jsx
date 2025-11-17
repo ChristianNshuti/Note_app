@@ -62,26 +62,9 @@ export default function Settings() {
       }
 
       dispatch(updateUser(formData)); 
-      setMessage("Name updated successfully!");
+      setMessage("Profile updated successfully!");
     }
     setIsEditingName(!isEditingName);
-  };
-
-  const handleSwitch = () => {
-    const currentPort = window.location.port;
-    const host = window.location.hostname; // current IP on network
-    const accessToken = localStorage.getItem('accessToken');
-
-    // Encode the token to make it URL-safe
-    const encodedToken = encodeURIComponent(accessToken);
-
-    if (currentPort === '5173') {
-      // Switch to port 5174 with token in query string
-      window.location.href = `http://${host}:5174/?accessToken=${encodedToken}`;
-    } else {
-      // Switch to port 5173 with token in query string
-      window.location.href = `http://${host}:5173/?accessToken=${encodedToken}`;
-    }
   };
 
   
@@ -205,11 +188,6 @@ export default function Settings() {
           </div>
         </div>
       )}
-
-      <div className={Styles.logoutDiv} onClick={handleSwitch}>
-        <img src={Switch} alt="switch icon" className={Styles.icon} />
-        <span>Switch to blink</span>
-      </div>
       
       <div className={Styles.logoutDiv} onClick={handleLogout}>
         <img src={Logout} alt="logout icon" className={Styles.icon} />

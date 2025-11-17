@@ -91,7 +91,6 @@ function AppRoutes() {
                 <Route path="notes" element={<Notes />} />
                 <Route path="pastpapers" element={<Pastpapers />} />
                 <Route path="saved" element={<Saved />} />
-                <Route path="contacts" element={<Contacts />} />
                 <Route path="courses/:type/:year" element={<Courses />} />
                 <Route path="savednotes" element={<SavedNotes />} />
                 <Route path="savedpastpapers" element={<SavedPastpapers />} />

@@ -3,13 +3,11 @@ const Note = require('../models/notesModel');
 
 const saveAndUpload = async (req,res) => {
     const userID = req.user.userId;
-    const fname = req.user.firstname;
-    const lname = req.user.lastname;
+    const username = req.user.username;
     const publicId = req.file.filename;
 
     try {
         const {type,name,grade,lesson,documentName,description,term,category,year} = req.body;
-
         if(!req.file) {
             return res.status(400).json({message: "No file uploaded"});
         }
@@ -17,7 +15,7 @@ const saveAndUpload = async (req,res) => {
         if(type == 'Notes') {
             const NoteTrack = {
                 uploaderId:userID,
-                uploaderName:fname + ' ' +lname,
+                uploaderName:username,
                 grade:grade,
                 lesson:lesson,
                 noteName:name,
@@ -32,7 +30,7 @@ const saveAndUpload = async (req,res) => {
         } else if(type == 'Assessments') {
             const AssessmentsTrack = {
                 uploaderId: userID,
-                uploaderName:fname + ' ' + lname,
+                uploaderName:username,
                 grade:grade,
                 lesson:lesson,
                 term:term,

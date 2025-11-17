@@ -17,7 +17,7 @@ const getSavedAssessments = async (req,res) => {
         const SavedAssessmentIds = savedDBAssessments.map((item) => item.document_id);
 
         const allMySavedAssessments = await assessments.find
-        ({ _id: { $in: SavedAssessmentsIds}})
+        ({ _id: { $in: SavedAssessmentIds}})
 
         const assessmentMap = new Map();
         allMySavedAssessments.forEach((assessment) => {
