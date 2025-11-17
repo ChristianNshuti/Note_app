@@ -105,7 +105,7 @@ export const checkAuth = createAsyncThunk('auth/checkAuth', async(_,{dispatch,re
         headers: {
             Authorization: `Bearer ${token}`
         }
-     });
+     },{withCredentials:true});
 
     return res.data;
     }
