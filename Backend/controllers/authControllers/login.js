@@ -109,12 +109,15 @@ const login = async(req,res) => {
         const accessToken = generateAccessToken(AccessTokenPayload);
         const refreshToken = generateRefreshToken(refreshTokenPayload);
 
-        res.cookie("refreshToken",refreshToken, {
-            httpOnly:true,
-            secure:false,
-            sameSite:'Strict',
-            expires:new Date(Date.now() + 7 * 24 * 60 * 60 * 100)
+        res.cookie("refreshToken", refreshToken, {
+            httpOnly: true,
+            secure: true,              // Render uses HTTPS
+            sameSite: 'None',          // Allows cross-site cookies
+            domain: "onrender.com",    // Optional but recommended
+            path: "/",                 // Default path
+            expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
         });
+        
 
 
         return res.status(200).json({message: "Logged in successfully",accessToken});
