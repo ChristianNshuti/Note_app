@@ -1,0 +1,35 @@
+.activityMain {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.holder {
+  flex: 0 0 auto; /* Upload layer doesn’t expand */
+}
+
+.activity-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.uploadOverlay {
+  position: fixed;
+  height:100%;
+  width:100%;
+  background-color: rgba(35, 35, 125, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom:15vh;
+}
+
+.uploadLayer.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}

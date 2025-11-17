@@ -1,0 +1,447 @@
+.pastpaperMain {
+    width: 84vw;
+    height: 100vh;
+    margin-left: 1%;
+    margin-top:1vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2vh 2vh 0vh 0vh;
+    box-shadow: inset 0 10px 10px -10px rgba(35, 35, 125, 0.5);
+    padding-top:1vh;
+    box-sizing:border-box;
+    overflow-x:hidden;
+    position: relative;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(35, 35, 125); /* blue-500 */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #2563eb; /* blue-600 */
+}
+
+.pagination button:disabled {
+  background-color: #9ca3af; /* gray-400 */
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: #1f2937; /* gray-800 */
+}
+
+.filtersDiv {
+    width:100%;
+    height:10vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:2.5%;
+}
+.filterText {
+    font-size:1.7vw;
+    font-weight:600;
+}
+
+
+.customSelectWrapper {
+    position: relative;
+    width:16vw; 
+
+}
+.customSelect:hover {
+    font-weight: 900;
+}
+
+.customSelectWrapper img {
+    height:1.9vw;
+    width:2.5vw;
+}
+
+.customSelect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #000000;
+    font-family: 'Karma','Arial',sans-serif;
+    cursor: pointer;
+    font-size:1.2em;
+    font-weight:500;
+    border-radius:10vh;
+    justify-content: center;
+    align-items:center;
+    gap:10%;
+    
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right:0;
+    width:140px;
+    margin-top:1vh; 
+    border-radius:2vh;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(35, 35, 125);    
+}
+
+.option {
+    padding: 5px;
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.1em;
+    font-weight: 550;
+    border-radius:2vh;
+    transition: background-color 0.1s,color 0.1s;
+
+}
+
+.option:hover {
+    background-color: rgb(35,35,125);
+    color: white;
+}
+
+  
+
+
+.pastpapers {
+    display: flex;
+    box-sizing:border-box;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    overflow-y: auto;
+    flex:1;
+    padding-top: 4vh;
+    padding-left:6%;
+    padding-right:5%;   
+    margin-top:0vh;
+    padding-bottom:20vh;
+
+}
+
+.pastpapers > div:nth-last-child(1) {
+    margin-right: auto; 
+}
+
+
+
+.documentItself { 
+    height:17vw;
+    flex: 0 0 calc(48% - 1rem);
+    display: flex;
+    flex-direction: column;
+    border-radius:2vh;
+    box-shadow: 0px 0px 10px rgb(35, 35, 125);
+    padding-right:1%;
+    padding-bottom:1vh;
+    min-height: 170px;
+}
+
+
+.documentItself div:nth-of-type(1){
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    display: flex;
+}
+.rightDocument {
+    width:60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftDocument {
+    width:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-bottom:4%;
+}
+
+.leftDocument img{
+    width:8vw;
+    height:8vw;
+}
+
+
+
+ .docTitle {
+    font-size: 1.5vw;
+    font-weight:650;
+    margin-bottom:0;
+  
+  }
+  .docDescription {
+    font-size:1.2vw;
+    font-weight:500;
+    margin-bottom: 0;
+  }
+
+ .furtherActions {
+    display: flex;
+    align-items: center;
+    height: 4.6vh;
+    margin-top: auto;
+    padding: 0 5%;
+    gap: 5%;
+    font-weight: 600;
+  }
+  
+  .furtherActions img {
+    height: 4vh;
+    width: 4vh;
+    cursor: pointer;
+  }
+  
+  .furtherActions div:nth-of-type(2) {
+    margin-left: auto;
+  }
+  
+  .tooltipWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(35, 35, 125);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    height: fit-content;
+  }
+  
+  .tooltipWrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgb(35, 35, 125) transparent;
+  }
+
+.loaderContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #f3f3f3; /* Light gray */
+  border-top: 6px solid #3498db; /* Blue */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loaderonContainer span {
+  font-size: 1.2rem;
+  color: #555555;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  @media (max-width: 1280px) {
+    .pastpaperMain {
+      width:100%;
+    }
+
+
+    .leftDocument img{
+      width:9vw;
+      height:9vw;
+     }
+
+    .pastpapers > div:nth-last-child(1) {
+      margin-right: auto; 
+      margin-left:0.5vw;
+     }
+
+
+    .docTitle {
+      font-size:2.3vw;
+    }
+    .docDescription {
+      font-size:1.4vw;
+    }
+
+    .pastpapers {
+      padding-left:0;
+      margin-right:0;
+    }
+  
+    .furtherActions img {
+      height:3vh;
+      width: 3vh;
+    }
+    .documentItself {
+      height:fit-content;
+    }
+
+    .leftDocument {
+      justify-content: center;
+      align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 850px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ensure no horizontal scroll */
+  }
+
+  .filterText {
+    display:none;
+  }
+
+  .pastpapers > div:nth-last-child(1) {
+    margin:0; 
+  }
+
+  .leftDocument img{
+    width:15vw;
+    height:15vw;
+   }
+
+  .leftDocument {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+
+  .pastpaperMain {
+    width: 100%; /* Ensure it takes full width */
+    padding-left: 0;
+    padding-right: 0; /* Remove any padding that might cause horizontal scrolling */
+  }
+
+  .documentItself {
+    flex: 0 0 calc(100% - 3rem); /* Make contribution class full width on small screens */
+    height: fit-content;
+  }
+
+  .pastpapers {
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+
+
+
+
+  .docTitle {
+    font-size: 2.9vw; 
+    font-weight: 650;
+    margin-bottom: 0;
+  }
+  
+  .docDescription {
+    font-size:2.4vw; 
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .customSelectWrapper {
+    width:25vw;
+  }
+  .docTitle {
+    font-size:4vw; 
+    font-weight: 650;
+    margin-bottom: 0;
+  }
+  
+  .docDescription {
+    font-size:3.6vw; 
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+}

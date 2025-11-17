@@ -1,0 +1,310 @@
+
+.headerMain {
+    width: 100vw;
+    height: 11vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.leftHeader {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.leftHeader img {
+    height: 9vh;
+    width: 9vh;
+    margin: 0;
+}
+
+.leftHeader p {
+    font-size: 5vh;
+    font-weight: 900;
+    font-family: 'Karma', 'arial', sans-serif;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.middleHeader {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    position: relative;
+}
+
+.middleHeader button {
+    height: 6.5vh;
+    width: 3.1vw;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    transform: translateX(-150%);
+}
+
+.middleHeader img {
+    height: 3vh;
+    width: 1.4vw;
+    cursor: pointer;
+}
+
+.middleHeader input {
+    height: 6.5vh;
+    width: 40vw;
+    border-radius: 10vh;
+    padding-left: 5vh;
+    font-size: 3vh;
+}
+
+.rightHeader {
+    display: flex;
+    font-size: 3vh;
+    font-family: 'Karma', 'Arial', sans-serif;
+    align-items: center;
+    font-weight: 650;
+}
+
+.rightHeader > *:first-child {
+    margin-right: 2vw;
+}
+
+.rightHeader > *:not(:first-child) {
+    margin-left: 1vw;
+}
+
+.rightHeader div {
+    display: flex;
+    gap: 2vw;
+}
+
+.profilePic {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.uploadButton {
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease; 
+    cursor: pointer;
+}
+
+.uploadButton:hover {
+    background-color: rgba(210, 210, 210, 0.5);
+}
+
+.uploadButton img {
+    height: 5vh;
+    width: 5vh;
+}
+
+.tooltipWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(35, 35, 125);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.tooltipWrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent rgb(35, 35, 125) transparent;
+}
+
+.searchDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 10;
+    margin-top: 4px;
+}
+
+.searchOption {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
+    transition: background-color 0.2s;
+    color: rgb(35,35,125);
+    font-weight: 650;
+    background-color: rgba(35,35,125,0.1);
+}
+
+.searchOption:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hamburgerButton {
+    display: none;
+}
+
+.changedBack {
+    background-color: rgba(210,210,210,0.5);
+}
+
+
+.active {
+    background-color: rgba(210,210,210,0.5);
+}
+
+
+@media (max-width: 1280px) {
+    .hamburgerButton {
+        display: block;
+        height: 4.5vh;
+        width: 4.5vh;
+        cursor: pointer;
+    }
+
+    .leftHeader p {
+        font-size: 4vh;
+    }
+
+    .middleHeader input {
+        width: 30vw;
+        font-size: 2.5vh;
+    }
+
+    .rightHeader {
+        font-size: 2.5vh;
+    }
+
+    .profilePic {
+        height: 7.5vh;
+        width: 7.5vh;
+    }
+
+    .uploadButton {
+        height: 6vh;
+        width: 6vh;
+    }
+
+    .uploadButton img {
+        height: 4vh;
+        width: 4vh;
+    }
+
+    .leftHeader img {
+        height: 5.5vh;
+        width: 5.5vh;
+    }
+
+    .middleHeader {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .leftHeader p {
+        font-size: 3.5vh;
+    }
+
+    .rightHeader {
+        font-size: 2.2vh;
+    }
+
+    .profilePic {
+        height: 7vh;
+        width: 7vh;
+    }
+
+    .uploadButton {
+        height: 5.5vh;
+        width: 5.5vh;
+    }
+
+    .uploadButton img {
+        height: 3.5vh;
+        width: 3.5vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .rightHeader .username {
+        display: none;
+    }
+
+    .hamburgerButton {
+        height: 3vh;
+        width: 3vh;
+    }
+
+    .leftHeader img {
+        height: 5.2vh;
+        width: 5.2vh;
+    }
+
+    .rightHeader p {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .profilePic {
+        height: 6vh;
+        width: 6vh;
+    }
+
+    .uploadButton {
+        height: 5vh;
+        width: 5vh;
+    }
+
+    .uploadButton img {
+        height: 3.2vh;
+        width: 3.2vh;
+    }
+
+    .leftHeader,
+    .rightHeader {
+        justify-content: center;
+        width: 100%;
+    }
+}

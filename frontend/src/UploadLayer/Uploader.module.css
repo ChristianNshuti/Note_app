@@ -1,0 +1,273 @@
+
+* {
+  font-family: 'karma','sans-serif',arial;
+  box-sizing: border-box;
+}
+
+.uploadMain {
+  position: relative;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2vh;
+  box-shadow: 0 0 15px rgba(35, 35, 125, 0.4);
+  align-items: center;
+  gap: 1vw;
+  padding-bottom: 5vh;
+  overflow: hidden; /* ensures rounded corners clip the overlay */
+  z-index: 0;
+  background-color: white;
+  height:fit-content;
+  margin-top:5vh;
+}
+
+.headerForm {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:space-around;
+  width:100%;
+
+
+
+}
+.closeHolder {
+  height:30px;
+  width:30px;
+  align-self: flex-start;
+  margin:1vw 0 0 1vw;
+  cursor: pointer;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  background-color:rgb(35, 35, 125);
+  border-radius:50%;
+  cursor: pointer;
+  border: none;
+}
+
+.closeHolder.animateClose {
+  animation: colorSwitch 0.15s ease-in-out 9 alternate;
+}
+
+@keyframes colorSwitch {
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: rgb(35, 35, 125);
+  }
+}
+
+
+.headerForm button img {
+  height:15px;
+}
+
+
+.uploadMain::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('assets/notely.png');
+  background-size: clamp(12vw, 5vh, 20vw);
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08; /* Adjust transparency */
+  z-index: -1;
+}
+
+
+.navigationDiv img {
+  height:5rem;
+  width:5rem;
+  cursor:pointer;
+}
+
+.uploadMain h1 {
+  font-size:1.5rem;
+  color:rgb(35, 35, 125);
+  align-self: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap:1vw;
+}
+
+.form input {
+  width: 95%;
+  height: 2rem;
+  border-radius: 5px;
+  padding: 0 1rem;  /* Add equal padding left and right */
+  padding-right: 2.5rem; /* Add extra padding-right for the arrow */
+  font-size: 1rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(35, 35, 125, 0.4);
+}
+
+.styledSelect {
+  width: 95%;
+  height: 2rem;
+  padding: 0 2.5rem 0 1rem; /* more space on right for the arrow */
+  border-radius:5px;
+  font-size: 1rem;
+  appearance: none;             /* remove default arrow */
+  background: url('data:image/svg+xml;utf8,<svg fill="gray" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
+  background-color: #fff;
+  background-size: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border: 1px solid rgba(35, 35, 125, 0.4);
+}
+
+
+
+textarea {
+  border-radius: 0.5rem;
+  width:95%;
+  padding-left:1vw;
+  border: 1px solid rgba(35, 35, 125, 0.4);
+}
+
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid rgba(35, 35, 125, 0.4);
+  height: 2rem;
+  box-sizing: border-box;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileLabel {
+  background-color: #4A00E0;
+  background-image: linear-gradient(45deg, rgb(35, 35, 125), rgba(255, 255, 255, 0.2));
+  color: white;
+  padding: 0.2rem 1.2rem; /* Smaller padding to fit 2rem height */
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Match the 2rem height of parent */
+  box-sizing: border-box;
+  
+}
+
+.fileLabel:hover {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgb(35, 35, 125));
+}
+
+.fileName {
+  font-size: 0.9rem;
+  color: #444;
+  font-style: italic;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Center vertically */
+}
+
+
+.submitBtn {
+  width:95.5%;
+  height:2.2rem;
+  border-radius:5px;
+  background-color: rgb(35, 35, 125);
+  border:none;
+  color:white;
+  cursor: pointer;
+  font-size:1rem;
+  
+}
+
+input::placeholder,select {
+  opacity:0.5;
+}
+
+
+
+@media (max-width: 1024px) {
+  .uploadMain {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .uploadMain {
+    width: 70vw;
+    height: auto;
+    padding: 2vh 2vw;
+    gap: 2vh;
+  }
+  .form {
+    gap:2vh;
+  }
+
+  .uploadMain h1 {
+    font-size: 1.2rem;
+  }
+
+  .form input,
+  .styledSelect,
+  .submitBtn,
+  .inputWrapper {
+    font-size: 0.95rem;
+    height: 2.2rem;
+  }
+
+  .fileLabel {
+    font-size: 0.85rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .fileName {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .uploadMain {
+    width: 85vw;
+  }
+
+  .uploadMain h1 {
+    font-size: 1rem;
+  }
+
+  .form input,
+  .styledSelect,
+  .submitBtn,
+  .inputWrapper {
+    font-size: 0.9rem;
+  }
+
+  .fileLabel {
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  textarea {
+    width: 95%;
+  }
+}
+
+
+

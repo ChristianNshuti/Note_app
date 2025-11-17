@@ -1,0 +1,296 @@
+* {
+  font-family: Arial, sans-serif;
+}
+
+.settingsMain {
+  width: 20vw;
+  max-width: 400px;
+  min-width: 250px;
+  border-radius: 3vh;
+  box-shadow: 0 0 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5vh 1vw;
+  background: white;
+  gap: 3vh;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.profileImage {
+  width: 8vw;
+  height: 8vw;
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 1vh;
+  cursor:pointer;
+}
+
+.infoSection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8vh 1.5vw;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.infoSection div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.infoSection label {
+  font-size: 1vw;
+  color: #666;
+  white-space: nowrap;
+}
+
+.infoSection span,
+.infoSection input {
+  font-size: 1.2vw;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoSection input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+}
+
+.infoSection input:disabled {
+  color: #333;
+}
+
+.editBtn {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  padding: 0.4vh 0.8vw;
+  cursor: pointer;
+  font-size: 1vw;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.editBtn:hover {
+  background: #0056b3;
+}
+
+.confirmEmail {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+  padding: 0.8vh 1.5vw;
+  box-sizing: border-box;
+}
+
+.confirmEmail input {
+  border: 1px solid #ccc;
+  border-radius: 1vh;
+  padding: 0.4vh 0.8vw;
+  font-size: 1.1vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1vw;
+  justify-content: flex-end;
+}
+
+.confirmBtn {
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  padding: 0.4vh 0.8vw;
+  cursor: pointer;
+  font-size: 0.9vw;
+}
+
+.confirmBtn:hover {
+  background: #218838;
+}
+
+.undoBtn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 1vh;
+  padding: 0.4vh 0.8vw;
+  cursor: pointer;
+  font-size: 0.9vw;
+}
+
+.undoBtn:hover {
+  background: #5a6268;
+}
+
+.message {
+  background: #28a745;
+  color: white;
+  padding: 0.5vh 1vw;
+  border-radius: 1vh;
+  font-size: 0.8vw;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
+  animation: fadeOut 3s forwards;
+}
+
+.message.error {
+  background: #dc3545;
+}
+
+
+.logoutDiv {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0,0.8);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,filter 0.3s ease;
+  width:100%;
+  padding: 0.8vh 1.5vw;;
+  border-radius:0.4vw;
+}
+
+.logoutDiv:hover {
+  background: #5a6268;
+  color: white;
+}
+.logoutDiv:hover .icon {
+  filter: brightness(0) invert(1);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+
+
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settingsMain {
+    width: 80vw;
+    height: auto;
+    min-height: 50vh;
+    padding: 3vw;
+    max-width: 100%;
+  }
+
+  .profileImage {
+    width: 25vw;
+    height: 25vw;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .infoSection label {
+    font-size: 2.5vw;
+  }
+
+  .infoSection span,
+  .infoSection input {
+    font-size: 3.5vw;
+  }
+
+  .editBtn {
+    font-size: 3.5vw;
+    padding: 1vw 2vw;
+  }
+
+  .confirmEmail input {
+    font-size: 3.5vw;
+    padding: 1vw 2vw;
+  }
+
+  .buttonGroup {
+    gap: 2vw;
+  }
+
+  .confirmBtn,
+  .undoBtn {
+    font-size: 2.5vw;
+    padding: 1vw 2vw;
+  }
+
+  .message {
+    font-size: 2.8vw;
+    padding: 1vw 2vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .settingsMain {
+    width: 90vw;
+    padding: 4vw;
+    min-height: 60vh;
+  }
+
+  .profileImage {
+    width: 30vw;
+    height: 30vw;
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .infoSection label {
+    font-size: 3.5vw;
+  }
+
+  .infoSection span,
+  .infoSection input {
+    font-size: 4vw;
+  }
+
+  .editBtn {
+    font-size: 3.5vw;
+    padding: 1.5vw 3vw;
+  }
+
+  .confirmEmail input {
+    font-size: 3.8vw;
+    padding: 1.5vw 3vw;
+  }
+
+  .buttonGroup {
+    gap: 3vw;
+  }
+
+  .confirmBtn,
+  .undoBtn {
+    font-size: 3.5vw;
+    padding: 1.5vw 3vw;
+  }
+
+  .message {
+    font-size: 3.8vw;
+    padding: 1.5vw 3vw;
+  }
+}

@@ -1,0 +1,151 @@
+.coursesMain {
+  width: 84%;
+  height: 100vh;
+  margin-left: 1%;
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.selectedYear {
+  font-size: 5.5vh;
+  margin-left: 10%;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(35, 35, 125);
+}
+
+.courses {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  flex: 1;
+  padding-top: 4vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 15vh;
+}
+
+.contributionClass {
+  height: 30vh;
+  min-height: 170px;
+  border-radius: 2vh;
+  box-shadow: 0px 0px 10px rgb(35, 35, 125);
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  flex: 0 0 calc(33.333% - 1rem);
+  box-sizing: border-box;
+  align-items: center;
+  font-weight: 900;
+  font-size: 3vh;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.8s, color 0.4s;
+  text-align: center;
+}
+
+.contributionClass::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(35, 35, 125);
+  z-index: 0;
+  transition: top 0.8s;
+}
+
+.contributionClass:hover::before {
+  top: 0;
+}
+
+.contributionClass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contributionClass:hover {
+  color: white;
+}
+
+/* Responsive Adjustments */
+
+/* For screens between 1280px and 1024px */
+@media (max-width: 1280px) {
+  .coursesMain {
+    width: 100%; /* Ensure it takes full width */
+    margin-left: 0;
+  }
+
+  .contributionClass {
+    flex: 0 0 calc(50% - 1rem); /* Adjust to 50% width for mid-sized screens */
+  }
+  .selectedYear {
+    font-size: 5vh;
+  }
+}
+
+/* For screens between 1024px and 600px */
+@media (max-width: 1024px) {
+  .contributionClass {
+    flex: 0 0 calc(50% - 1rem); /* Adjust to 50% width */
+  }
+
+  .courses {
+    gap: 1.5rem; /* Increase gap slightly on medium screens */
+  }
+}
+
+/* For smaller screens (600px and below) */
+@media (max-width: 600px) {
+  .contributionClass {
+    height: 25vh;
+    flex: 0 0 calc(50% - 1rem); /* 50% width for better usability */
+  }
+
+  .courses {
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+
+  .selectedYear {
+    font-size: 4.8vh;
+  }
+}
+
+/* For very small screens (480px and below) */
+@media (max-width: 480px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ensure no horizontal scroll */
+  }
+
+  .coursesMain {
+    width: 100%; /* Ensure it takes full width */
+    padding-left: 0;
+    padding-right: 0; /* Remove any padding that might cause horizontal scrolling */
+  }
+
+  .contributionClass {
+    flex: 0 0 calc(100% - 3rem); /* Make contribution class full width on small screens */
+  }
+
+  .courses {
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+
+  .selectedYear {
+    font-size: 4.3vh;
+  }
+}
