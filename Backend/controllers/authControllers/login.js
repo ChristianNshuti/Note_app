@@ -111,12 +111,12 @@ const login = async(req,res) => {
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: true,              // Render uses HTTPS
-            sameSite: 'None',          // Allows cross-site cookies
-            domain: "onrender.com",    // Optional but recommended
-            path: "/",                 // Default path
+            secure: true,            // required since Render is HTTPS
+            sameSite: "None",        // required for cross-domain cookies
+            path: "/",               
             expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
         });
+        
         
 
 
