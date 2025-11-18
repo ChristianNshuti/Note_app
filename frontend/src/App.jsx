@@ -131,7 +131,7 @@ function AppInit() {
     if (!skipInit) {
       dispatch(checkAuth());
     }
-  }, [dispatch, user, skipInit]);
+  }, [dispatch, skipInit]);
   
 
   useEffect(() => {

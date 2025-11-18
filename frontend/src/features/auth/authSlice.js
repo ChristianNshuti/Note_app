@@ -138,7 +138,6 @@ export const checkAuth = createAsyncThunk('auth/checkAuth', async(_,{dispatch,re
     async (formData, { rejectWithValue }) => {
       try {
         const token = localStorage.getItem('accessToken');
-
         const res = await api.post(`${API_URL}/updateUser`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -146,8 +145,8 @@ export const checkAuth = createAsyncThunk('auth/checkAuth', async(_,{dispatch,re
           },
         });
 
-        const accessToken = res.data.accessToken;
-        localStorage.setItem('accessToken', accessToken);
+
+        localStorage.removeItem('accessToken');
 
         return res.data; // should include updatedUser and accessToken
       } catch (error) {

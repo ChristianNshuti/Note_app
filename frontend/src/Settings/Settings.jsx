@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { updateUser } from '../features/auth/authSlice';
+import { checkAuth, updateUser } from '../features/auth/authSlice';
 import Styles from './Settings.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Logout from '../assets/logout.webp';
@@ -17,13 +17,19 @@ export default function Settings() {
   const [confirmEmailInput, setConfirmEmailInput] = useState('');
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
-  const [fname,setFname] = useState('Any');
-  const [lname,setLname] = useState('Any');
+  const [displayUsername,setDisplayUsername] = useState('Any');
+  const [username,setUsername] = useState('Any');
   const [password,setPassword] = useState('Any');
   const navigate = useNavigate();
   const [profileImage, setProfileImage] = useState(null);
   const { profiles } = useSelector(state => state.profile );
   const loggedInProfile = profiles[user.userId]?.[0]?.profileImage || Profile;
+  
+  useEffect(() => {
+
+      dispatch(checkAuth());
+    
+  }, [dispatch, user]);
   
 
 
@@ -33,6 +39,12 @@ export default function Settings() {
       return () => clearTimeout(timer);
     }
   }, [message]);
+
+  useEffect(() => {
+    if (user?.username) {
+      setDisplayUsername(user.username);
+    }
+  }, [user]);
 
   const handleProfileImageChange = (e) => {
     const file = e.target.files[0];
@@ -54,8 +66,8 @@ export default function Settings() {
   const handleEditName = () => {
     if (isEditingName) {
       const formData = new FormData();
-      formData.append("firstname", fname);
-      formData.append("lastname", lname);
+      formData.append("username", username);
+      console.log("New username: ",username);
       formData.append("password", password);
       if (profileImage) {
         formData.append("file", profileImage); // 👈 must match multer field name
@@ -88,9 +100,13 @@ export default function Settings() {
     };
   
     const handleSavePassword = () => {
-      dispatch(updateUser({fname,lname,password}));
+      const formData = new FormData();
+      formData.append("username", 'Any');
+      formData.append("password", password);
+      dispatch(updateUser(formData));
       setMessage('Password updated successfully!');
       setIsEditingPassword(false);
+      setPassword('Any');
     };
 
     const handleLogout = () => {
@@ -128,18 +144,11 @@ export default function Settings() {
       
       <div className={Styles.infoSection}>
         <div>
-          <label>First Name</label>
+          <label>Username</label>
           <input
             type="text"
-            placeholder={user?.firstname || 'loading...'}
-            onChange={(e) => setFname(e.target.value)}
-            disabled={!isEditingName}
-          />
-          <label>Last Name</label>
-          <input
-            type="text"
-            placeholder={user?.lastname || 'loading...'}
-            onChange={(e) => setLname(e.target.value)}
+            placeholder={displayUsername || 'loading...'}
+            onChange={(e) => setUsername(e.target.value)}
             disabled={!isEditingName}
           />
         </div>
