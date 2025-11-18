@@ -26,7 +26,7 @@ function Login() {
 
       }
 
-      window.location.href="http://localhost:5173"
+      navigate("/");
     } catch (err) {
       setBackendError(err);
     }
