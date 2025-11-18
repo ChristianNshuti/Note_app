@@ -12,23 +12,23 @@ This repository contains a fullstack project with two separate folders:
 ### Install dependencies
 
 ```
-cd Backend<br>
+cd Backend
 npm install
 ```
 
 ### Run the server
-``
+```
 node server.js
-``
+```
 ## Running Frontend
 
 ### Install dependencies
 
-``
-cd frontend<br>
+```
+cd frontend
 npm install
-``
+```
 ### Run the server
-``
+```
 npm run dev
-``
+```
