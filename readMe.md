@@ -13,6 +13,7 @@ This repository contains a fullstack project with two separate folders:
 
 ``
 cd Backend
+
 npm install
 ``
 
@@ -26,6 +27,7 @@ node server.js
 
 ``
 cd frontend
+
 npm install
 ``
 ### Run the server
