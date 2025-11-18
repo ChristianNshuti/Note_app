@@ -114,7 +114,7 @@ export default function Saved(){
                                     <div className={Styles.documentItself} key={note._id || index}>
                                     <div>
                                         <div className={Styles.leftDocument}>
-                                        <img src={`../src/assets/noteicons/${note.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                                        <img src={`/noteicons/${note.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
                                         </div>
                                         <div className={Styles.rightDocument}>
                                         <p className={Styles.docTitle}>{note.lesson}</p>

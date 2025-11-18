@@ -245,7 +245,7 @@ export default function NotesOnly(){
                             <div className={Styles.documentItself} key={index}>
                                 <div>
                                     <div className={Styles.leftDocument}>
-                                        <img src={`../src/assets/noteicons/${oneFilterData.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                                        <img src={`/noteicons/${oneFilterData.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
                 
                                     </div>
                                     <div className={Styles.rightDocument}>
