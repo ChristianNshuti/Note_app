@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL = 'http://localhost:666/upload-document';
+const API_URL = 'https://note-app-backend-rh2b.onrender.com/upload-document';
 
 export const uploadNoteAndAssessment = createAsyncThunk(
     'notes/uploadNoteAndAssessment', 

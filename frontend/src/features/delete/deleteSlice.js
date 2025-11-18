@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL = 'http://localhost:666/delete';
+const API_URL = 'https://note-app-backend-rh2b.onrender.com/delete';
 
 export const deleteNote = createAsyncThunk('delete/deleteNote', async ({noteId,fileName}, thunkAPI) => {
     const token = localStorage.getItem('accessToken');

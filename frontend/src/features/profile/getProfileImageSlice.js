@@ -2,7 +2,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 //API_URL
-const API_URL = 'http://localhost:666/profile'
+const API_URL = 'https://note-app-backend-rh2b.onrender.com/profile'
 
 // Fetch single user image
 export const fetchUserProfileImage = createAsyncThunk(
