@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL = 'https://note-app-backend-rh2b.onrender.com/update';
+const API_URL = 'http://localhost:666/update';
 
 export const updateNote = createAsyncThunk('update/updateNote', async ({noteId,file,description}, thunkAPI) => {
     const token = localStorage.getItem('accessToken');

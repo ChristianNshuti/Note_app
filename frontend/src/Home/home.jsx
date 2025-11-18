@@ -315,7 +315,7 @@ export default function Home(){
             <div className={Styles.documentItself} key={index}>
                 <div>
                     <div className={Styles.leftDocument}>
-                        <img src={`/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                        <img src={`./src/assets/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
 
                     </div>
                     <div className={Styles.rightDocument}>
@@ -364,7 +364,7 @@ export default function Home(){
             <div className={Styles.documentItself} key={index}>
                 <div>
                     <div className={Styles.leftDocument}>
-                        <img src={`/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                        <img src={`src/assets/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
 
                     </div>
                     <div className={Styles.rightDocument}>
@@ -414,7 +414,7 @@ export default function Home(){
             <div className={Styles.documentItself} key={index}>
                 <div>
                     <div className={Styles.leftDocument}>
-                        <img src={`/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                        <img src={`src/assets/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
 
                     </div>
                     <div className={Styles.rightDocument}>
@@ -464,7 +464,7 @@ export default function Home(){
             <div className={Styles.documentItself} key={index}>
                 <div>
                     <div className={Styles.leftDocument}>
-                        <img src={`/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
+                        <img src={`src/assets/noteicons/${recentNote.lesson.toLowerCase().replace(/\s+/g, '')}.webp`} loading="lazy"/>
 
                     </div>
                     <div className={Styles.rightDocument}>

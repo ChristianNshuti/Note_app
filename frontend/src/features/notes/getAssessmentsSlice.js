@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import api from '../../API/tokenAPI';
 
-const API_URL='https://note-app-backend-rh2b.onrender.com/get-assessments';
+const API_URL='http://localhost:666/get-assessments';
 
 export const fetchAssessments = createAsyncThunk('assessments/fetchAssessments',async ({ grade, subject,recentOnes }, thunkAPI) => {
     try {
