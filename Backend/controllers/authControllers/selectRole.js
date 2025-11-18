@@ -23,8 +23,7 @@ const selectRole = async (req,res) => {
         const accessTokenPayload = {
             userId: user._id,
             email: user.email,
-            firstname: user.firstname,
-            lastname: user.lastname,
+            username: user.username,
             role: selectedRole,
             courses: user.courses,
         };
