@@ -3,7 +3,7 @@
 This repository contains a fullstack project with two separate folders:
 
 - `backend` → Node.js server
-- `frontend` → React frontend
+- `frontend` → React frontend server
 
 ---
 
@@ -11,15 +11,16 @@ This repository contains a fullstack project with two separate folders:
 
 ### Install dependencies
 
-```
-cd Backend
+```bash
+cd backend
 npm install
-```
 
 ### Run the server
 ```
 node server.js
-```
+
+---
+
 ## Running Frontend
 
 ### Install dependencies
