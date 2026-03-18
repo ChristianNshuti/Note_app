@@ -26,9 +26,7 @@ export default function Settings() {
   const loggedInProfile = profiles[user.userId]?.[0]?.profileImage || Profile;
   
   useEffect(() => {
-
       dispatch(checkAuth());
-    
   }, [dispatch, user]);
   
 
