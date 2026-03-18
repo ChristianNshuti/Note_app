@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://note-app-backend-rh2b.onrender.com',
+  baseURL: 'http://localhost:666',
   withCredentials: true,
 });
 
