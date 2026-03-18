@@ -16,7 +16,7 @@ cd backend
 npm install
 
 ### Run the server
-```bash
+```
 node server.js
 
 ---
@@ -25,10 +25,11 @@ node server.js
 
 ### Install dependencies
 
-```bash
+```
 cd frontend
 npm install
-
+```
 ### Run the server
-```bash
+```
 npm run dev
+```
